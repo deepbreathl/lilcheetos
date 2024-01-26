@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Website</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Registration Page -->
+<div id="registration" class="page">
+  <h2>Registration</h2>
+  <input type="text" id="registerUsername" placeholder="Username">
+  <input type="password" id="registerPassword" placeholder="Password">
+  <button class='enter-button'onclick="register()">Enter</button>
+  <p onclick="switchToLogin()">already have account ?</p>
+</div>
+
+<!-- Login Page -->
+<div id="login" class="page">
+  <h2>Login</h2>
+  <input type="text" id="loginUsername" placeholder="Username">
+  <input type="password" id="loginPassword" placeholder="Password">
+  <button class='enter-button' onclick="login()">Enter</button>
+  <p onclick="switchToRegister()">or, sign up</p>
+</div>
+
+<!-- Home Page -->
+<div id="home" class="page hidden">
+  <h2>Home Page</h2>
+  <button class='catagories-button' id="musicButton">music</button>
+  <button class='catagories-button' id="sportButton"onclick='notfound()'>sport</button>
+  <button class='catagories-button'onclick='notfound()'>library</button>
+  <button class="catagories-button"onclick='notfound()'>art</button>
+  <button class="catagories-button"onclick='notfound()'>workshop</button>
+  <button class='go-back'onclick="logout()">Log out</button>
+</div>
+<!-- Room Selection -->
+<div id="roomSelection" class="page hidden">
+  <h2>ROOM</h2>
+  <div class="room-grid">
+    <button onclick="selectRoom('1000')"class='select'>1000</button>
+    <button onclick="selectRoom('1001')"class='select'>1001</button>
+    <button onclick="selectRoom('1002')"class='select'>1002</button>
+    <button onclick="selectRoom('1003')"class='select'>1003</button>
+    <button onclick="selectRoom('1004')"class='select'>1004</button>
+    <button onclick="selectRoom('1005')"class='select'>1005</button>
+    <!-- Add more buttons for each room -->
+  </div>
+  <button class='go-back' onclick="goBack()">Go Back</button>
+</div>
+<!-- Time Slot Selection -->
+<div id="timeSelection1000" class="page hidden">
+  <h2>Choose Time Slot</h2>
+  <div class="time-grid">
+    <button data-room="1000" data-time="17.00-18.00" id='updatebutton100017.00-18.00'onclick="selectTime('17.00-18.00')"class='select'>17.00-18.00</button>
+    <button data-room="1000" data-time="18.00-19.00" id='updatebutton100018.00-19.00'onclick="selectTime('18.00-19.00')"class='select'>18.00-19.00</button>
+    <button data-room="1000" data-time="19.00-20.00" id='updatebutton100019.00-20.00'onclick="selectTime('19.00-20.00')"class='select'>19.00-20.00</button>
+    <!-- Add more buttons for each time slot -->
+  </div>
+  <button class='go-back' onclick="goBack()">Go Back</button>
+</div>
+
+<div id="timeSelection1001" class="page hidden">
+  <h2>Choose Time Slot</h2>
+  <div class="time-grid">
+    <button data-room="1001" data-time="17.00-18.00" id='updatebutton100117.00-18.00'onclick="selectTime('17.00-18.00')"class='select'>17.00-18.00</button>
+    <button data-room="1001" data-time="18.00-19.00" id='updatebutton100118.00-19.00'onclick="selectTime('18.00-19.00')"class='select'>18.00-19.00</button>
+    <button data-room="1001" data-time="19.00-20.00" id='updatebutton100119.00-20.00'onclick="selectTime('19.00-20.00')"class='select'>19.00-20.00</button>
+    
+    <!-- Add more buttons for each time slot -->
+  </div>
+  <button class='go-back' onclick="goBack()">Go Back</button>
+</div>
+
+<div id="sportSelection" class="page hidden">
+  <h2>ROOM</h2>
+  <div class="room-grid">
+    <button onclick="selectRoom('Bad 1'),notfound()">Bad 1</button>
+    <button onclick="selectRoom('Bad 2'),notfound()">Bad 2</button>
+    <!-- Add more buttons for each room -->
+  </div>
+  <button class='go-back' onclick="goBack()">Go Back</button>
+</div>
+
+
+
+
+
+
+
+<!-- Confirmation Dialog -->
+<div id="confirmation" class="page hidden">
+  <h2>Confirm Your Reservation</h2>
+  <div class="confirmation-dialog">
+    <button onclick="checkReservation()">Confirm</button>
+    <button class='go-back' onclick="goBack()">Cancel</button>
+  </div>
+</div>
+
+<!-- Cancelation Dialog -->
+<div id="cancelation" class="page hidden">
+  <h2>Cancel Your Reservation ?</h2>
+  <div class="confirmation-dialog">
+    <button onclick="checkReservation()">Confirm</button>
+    <button class='go-back' onclick="goBack()">Cancel</button>
+  </div>
+</div>
+
+<!-- not-found Dialog -->
+<div id="not-found" class="page hidden">
+  <h2>ยังไม่ได้ทำ แงๆ</h2>
+  <div class="confirmation-dialog">
+    <button class='go-back' onclick="goBack()">home</button>
+  </div>
+</div>
+
+
+<script src="script.js"></script>
+</body>
+</html>
